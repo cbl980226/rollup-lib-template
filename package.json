@@ -6,7 +6,7 @@
   "module": "dist/index.js",
   "main": "dist/index.cjs",
   "browser": "dist/index.umd.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     "*": {
       "browser": "./dist/index.umd.js",
@@ -25,8 +25,33 @@
     "commit": "git-cz",
     "release": "standard-version"
   },
-  "keywords": [],
+  "keywords": [
+    "rollup",
+    "template",
+    "typescript",
+    "lint",
+    "eslint",
+    "format",
+    "prettier",
+    "test",
+    "mocha",
+    "selenium",
+    "coverage",
+    "nyc",
+    "lint-staged",
+    "commitlint",
+    "commitizen",
+    "husky",
+    "standard-version"
+  ],
   "author": "cbl980226",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbl980226/rollup-lib-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cbl980226/rollup-lib-template/issues"
+  },
   "dependencies": {
     "lodash": "^4.17.21"
   },
