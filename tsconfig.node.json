@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["rollup.config.*", "babel.config.*", ".eslintrc.*", "./tools/**/*.js"],
+  "include": ["rollup.config.*", "babel.config.*", ".eslintrc.*", "commitlint.config.js", "./tools/**/*.js"],
   "compilerOptions": {
     "types": ["node"]
   }

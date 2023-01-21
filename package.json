@@ -20,7 +20,8 @@
     "test": "cross-env NODE_ENV=test TS_NODE_PROJECT=./tsconfig.spec.json mocha",
     "coverage": "nyc npm run test",
     "format:check": "prettier --write .",
-    "format:write": "prettier --check ."
+    "format:write": "prettier --check .",
+    "commit": "git-cz"
   },
   "keywords": [],
   "author": "cbl980226",
@@ -35,6 +36,9 @@
     "@babel/register": "^7.18.9",
     "@babel/runtime": "^7.20.7",
     "@babel/runtime-corejs3": "^7.20.7",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@commitlint/cz-commitlint": "^17.4.2",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
@@ -45,6 +49,7 @@
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "babel-plugin-istanbul": "^6.1.1",
+    "commitizen": "^4.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
@@ -63,8 +68,16 @@
     "*.{js,ts}": [
       "eslint --cache --fix"
     ],
+    "*.spec.{js,ts}": [
+      "npm run test -- -f"
+    ],
     "*.{js,ts,json,yml}": [
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   }
 }
