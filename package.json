@@ -21,7 +21,8 @@
     "coverage": "nyc npm run test",
     "format:check": "prettier --write .",
     "format:write": "prettier --check .",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "standard-version"
   },
   "keywords": [],
   "author": "cbl980226",
@@ -62,6 +63,7 @@
     "prettier": "2.8.3",
     "rollup": "^3.10.0",
     "selenium-webdriver": "^4.7.1",
+    "standard-version": "^9.5.0",
     "typescript": "^4.9.4"
   },
   "lint-staged": {
