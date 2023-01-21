@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/nycrc",
+  "exclude": ["**/*.spec.ts", "**/*.spec.js"],
+  "reporter": ["html", "text"],
+  "sourceMap": false,
+  "instrument": false,
+  "all": true
+}
