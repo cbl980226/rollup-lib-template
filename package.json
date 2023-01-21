@@ -1,6 +1,7 @@
 {
   "name": "rollup-lib-template",
   "version": "0.0.0",
+  "license": "MIT",
   "description": "",
   "module": "dist/index.js",
   "main": "dist/index.cjs",

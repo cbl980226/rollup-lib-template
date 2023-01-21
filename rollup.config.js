@@ -5,8 +5,6 @@ const typescript = require('@rollup/plugin-typescript');
 const fs = require('./tools/fs');
 const pkg = require('./package.json');
 
-console.log((process.env.NODE_ENV = 'production'));
-
 /**
  * @type {import("rollup").RollupOptions}
  */
