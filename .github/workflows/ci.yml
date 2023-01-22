@@ -42,9 +42,8 @@ jobs:
         with:
           node-version: 18.x
           cache: 'npm'
-      - uses: browser-actions/setup-chrome@latest
-        with:
-          chrome-version: latest
+      - name: Install Chrome
+        run: sudo apt-get install -y google-chrome-stable
       - run: npm ci
       - run: npm run test
 
