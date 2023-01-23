@@ -8,12 +8,18 @@ const { platform } = require('process');
 const path = require('path');
 const fs = require('fs');
 const execSync = require('child_process').execSync;
+const { Browser } = require('selenium-webdriver');
 
 /**
  * currently supported browsers for selenium-manager
- * @type {string[]}
+ * @type {object}
  */
-const Browser = ['chrome', 'firefox', 'edge', 'iexplorer', 'ie'];
+const BrowserMap = {
+  [Browser.CHROME]: 'chrome',
+  [Browser.EDGE]: 'edge',
+  [Browser.FIREFOX]: 'firefox',
+  [Browser.INTERNET_EXPLORER]: 'iexplorer',
+};
 
 /**
  * Determines the path of the correct Selenium Manager binary
@@ -40,16 +46,17 @@ function getBinary() {
 
 /**
  * Determines the path of the correct driver
- * @param {Browser|string} browser name to fetch the driver
+ * @param {Browser|string} browserName name to fetch the driver
  * @param {string|number} [browserVersion] version of the browser
  * @returns {string} path of the driver location
  */
-function driverLocation(browser, browserVersion) {
-  if (!Browser.includes(browser.toLocaleString())) {
-    throw new Error(`Unable to locate driver associated with browser name: ${browser}`);
+function driverLocation(browserName, browserVersion) {
+  const browser = BrowserMap[browserName];
+  if (!browser) {
+    throw new Error(`Unable to locate driver associated with browser name: ${browser}, Allowed browsers name: ${Object.keys(BrowserMap)}`);
   }
 
-  let args = [getBinary(), '--browser', browser === 'ie' ? 'iexplorer' : browser];
+  let args = [getBinary(), '--browser', browser];
   let result;
 
   if (browserVersion) {

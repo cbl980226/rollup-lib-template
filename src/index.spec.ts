@@ -9,7 +9,7 @@ describe('Simple tests', () => {
   let driver: WebDriver;
 
   before(async () => {
-    // const service = new ServiceBuilder(driverLocation('ie')).build();
+    // const service = new ServiceBuilder(driverLocation(Browser.INTERNET_EXPLORER)).build();
     // const options = new Options();
     // driver = Driver.createSession(options, service);
 
